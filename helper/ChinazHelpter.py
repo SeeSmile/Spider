@@ -4,6 +4,12 @@ from BeautifulSoup import BeautifulSoup
 from data.ChinaEntity import ChinaEntity
 
 
+def getRankList(url):
+    h = httplib2.Http()
+    resp, content = h.request(url, "GET")
+    print content
+
+
 def get_search_single(keyword):
     entity = ChinaEntity()
     url = "http://search.top.chinaz.com/Search.aspx?url=" + keyword
